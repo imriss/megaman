@@ -22,7 +22,7 @@ RUN chmod u+x /usr/sbin/aur.sh
 RUN chmod u+x /usr/sbin/add-aur
 RUN add-aur docker
 
-RUN RUN su docker -c 'pacaur -S --needed --noprogressbar --noedit --noconfirm python-pip jupyter-notebook python-ipywidgets' \
+RUN su docker -c 'pacaur -S --needed --noprogressbar --noedit --noconfirm python-pip jupyter-notebook python-ipywidgets' \
   && pip install nose coverage cython numpy scipy scikit-learn pyflann pyamg
 
 
