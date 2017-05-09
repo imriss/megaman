@@ -26,7 +26,7 @@ RUN su docker -c 'pacaur -S --needed --noprogressbar --noedit --noconfirm python
   && pip install nose coverage cython numpy scipy scikit-learn pyflann pyamg
 
 
-RUN /bin/bash -c "comm -23 <(pacman -Qq) <(cat <(pactree -u python-ipywidgets |sort) <(pactree -u pacman |sort) <(pactree -u sudo |sort) <(pacman -Qgq base | sort) |sort -u) | xargs pacman -Rdd --noconfirm" \
+RUN /bin/bash -c "comm -23 <(pacman -Qq) <(cat <(pactree -u python-ipywidgets |sort) <(pactree -u mpfr |sort) <(pactree -u pacman |sort) <(pactree -u sudo |sort) <(pacman -Qgq base | sort) |sort -u) | xargs pacman -Rdd --noconfirm" \
   && pacman -Scc --noconfirm \
   &&  rm /var/cache/pacman/pkg/* \
   && paccache -rf 
